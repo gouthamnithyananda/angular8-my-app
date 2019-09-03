@@ -1,0 +1,10 @@
+<div [formGroup]="loginForm">
+        <label>Email</label>
+        <input type="text" formControlName="email"/>
+              
+       <label>Password</label>
+        <input type="password" formControlName="password"/>
+
+<button type="button" [disabled]="loginForm.invalid" (click)="login()"> Submit </button>
+<button type="button" [disabled]="loginForm.invalid" (click)="register()"> Register </button>
+</div>

@@ -1,0 +1,35 @@
+<p>demo works!</p>
+
+<h1>One Way data binding</h1>
+<h2>string interpolation</h2>
+
+<p>{{ demoData}}</p>
+
+<p>{{3+4}}</p>
+
+<h2>Property Binding</h2>
+
+<p>
+    <!-- //this kind of string interpolation will convert the value of the variable always to string -->
+        <input type="text" value="{{demoData}}"/>
+</p>
+<p>
+    
+    <!-- this will preserve the data type -->
+    <input type="text" [value]="demoData"/>
+</p>
+
+
+<h1>Event Binding</h1>
+
+<button (click)="showAlert()">Click Me</button>
+
+<h1>Two way data binding</h1>
+
+<!-- two way data binding is achived in angular using directive ng-model -->
+
+<p>
+<input type="text" [(ngModel)]="demoData"/>
+
+</p>
+

@@ -1,0 +1,30 @@
+<p>template-driven Form!</p>
+
+<button type="button" (click)="loadData(userForm)">Load data</button>
+
+<form (submit)="saveDate(userForm)" #userForm="ngForm">
+<label>Name</label>
+<input type="text" name="name" ngModel required minlength="3" #uname="ngModel"/>
+<div *ngIf="uname.touched||uname.dirty">
+<span *ngIf="uname.hasError('required')">name is required</span>
+<span *ngIf="uname.hasError('minlength')">min 2 chars required</span>
+
+</div>
+<label>Age</label>
+<input type="text" name="age" ngModel required/>
+<div ngModelGroup="address">
+<label>City</label>
+<input type="text" name="city" ngModel required />
+<label>pincode</label>
+<input type="text" name="pincode" ngModel required appZipCode #pin="ngModel"/>
+<span *ngIf="pin.hasError('zipcode')">Invalid pincode</span>
+</div>
+
+<button> Submit </button>
+
+<pre>
+{{userForm.value|json}}
+
+</pre>
+
+</form>

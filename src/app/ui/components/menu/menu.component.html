@@ -1,0 +1,10 @@
+<ul class="navbar-nav mr-auto">
+    <div *ngFor="let menu of menuItems">
+            <li class="nav-item active">
+                    <a class="nav-link" [routerLink]="menu.menuLink">{{menu.menuText| titlecase}} <span class="sr-only">(current)</span></a>
+                  </li>
+
+    </div>
+        
+       
+      </ul>

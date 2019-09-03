@@ -1,0 +1,31 @@
+<p>model-driven Form</p>
+
+<form [formGroup]="userForm">
+    <label>Name</label>
+    <input type="text" formControlName="name"/>
+    <div *ngIf="userForm.get('name').touched||userForm.get('name').dirty">
+            <span *ngIf="userForm.get('name').hasError('required')">name is required</span>
+            <span *ngIf="userForm.get('name').hasError('minlength')">min 2 chars required</span>
+            
+            </div>
+
+    <label>Age</label>
+    <input type="text" formControlName="age"/>
+
+    <div formGroupName="address">
+            <label>City</label>
+            <input type="text" formControlName="city"/>
+                  
+                    
+                    
+        
+            <label>Pincode</label>
+            <input type="text" formControlName="pincode"/>
+
+            <!-- <span *ngIf="addressObj.get('pincode').hasError('required')">pincode is required</span> -->
+            <span *ngIf="addressObj.get('pincode').hasError('zipcode')">pincode is invalid</span>
+
+    </div>
+    <button> Submit </button>
+<pre>{{userForm.value|json}}</pre>
+</form>

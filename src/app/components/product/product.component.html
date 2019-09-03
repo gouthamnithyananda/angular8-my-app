@@ -1,0 +1,10 @@
+<div>
+<img [src]="pData.productImage" appImgFallback="https://kare.ee/images/no-image.jpg">
+<h3>{{pData.productName | uppercase}}</h3>
+<h4>{{pData.productPrice | conversion:  cCode|currency:  cCode : 'code': '1.2'}} </h4>
+<button *ngIf="pData.productStock else nocart">Add to Cart</button>
+<ng-template #nocart>
+    <p>Out of stock</p>
+</ng-template>
+
+</div>

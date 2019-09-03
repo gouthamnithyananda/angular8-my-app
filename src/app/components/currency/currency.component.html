@@ -1,0 +1,5 @@
+<select (change)="updateCode(curr.value)" #curr>
+<!-- <select (change)="updateCode($event.target.value)" #curr> -->
+<option *ngFor="let c of currencies">{{c}}</option>
+
+</select>

@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  apiKey: "AIzaSyCHW1otlkWvnjAkm-D2WzgD5GjO-fCBXtM",
-  databaseURL: "https://my-app-2d49f.firebaseio.com"
+  apiKey: "xxxx",
+  databaseURL: "xxxx"
 };
 
 /*
